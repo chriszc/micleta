@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/Cleta/CletaAap/src/java/com/myapp/struts/Data/Data.java</file>
+            <file>file:/C:/xampp/htdocs/Cleta/CletaAap/web/Data/Data.java</file>
+            <file>file:/C:/xampp/htdocs/Cleta/CletaAap/web/Data/DataPersona.java</file>
+            <file>file:/C:/xampp/htdocs/Cleta/CletaAap/src/java/com/myapp/struts/ApplicationResource.properties</file>
             <file>file:/C:/xampp/htdocs/Cleta/CletaAap/web/Vistas/insertarUsuario.jsp</file>
             <file>file:/C:/xampp/htdocs/Cleta/CletaAap/web/js/Usuarios.js</file>
             <file>file:/C:/xampp/htdocs/Cleta/CletaAap/web/js/validaciones.js</file>
