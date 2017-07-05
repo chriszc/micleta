@@ -21,7 +21,7 @@
 	<script src="./js/menu.js"></script>
 	<script scr="./js/footer.js"></script>
 	<script src="./js/login.js"></script>
-	<script src="./js/cliente.js"></script>
+	<script src="../js/Usuarios.js"></script>
 	<script src="../js/validaciones.js"></script>
 	<script src="//code.jquery.com/jquery-1.9.1.js"></script>
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -43,6 +43,14 @@
 						<label class="labelEncabezados" ><span class="icon-man-woman"></span></label>
 						<label class="labelEncabezados" >Registro Usuario</label>
 					</div>
+                                    
+                                    <div class="input-group radio">
+						<input type="radio" name="persona" id="Cliente"  value="1" onClick="OpcionesCiclo(1)">
+						<label for="Cliente" id="lClien" >Cliente</label>
+						<input type="radio" name="persona"  id="Ciclo" value="2" onClick="OpcionesCiclo(2)">
+						<label for="Ciclo" id="LCiclo" >Ciclo</label>
+						
+					</div>	
 					
 					<div class="input-group">
 						<input type="text" id="nombre" name="nombre" onkeypress="return soloLetras(event, this)">
@@ -50,7 +58,7 @@
 					</div>
 					<div class="input-group">
 						<input type="text" id="apellidos" name="apellidos" onkeypress="return soloLetras(event, this)">
-						<label class="label" for="correo">Apellidos:</label>
+						<label class="label" id="LApellido" for="correo">Apellidos:</label>
 					</div>
 					<div class="input-group" >
 						<input type="datepicker" id="date" name="date" required readonly />
@@ -58,7 +66,7 @@
 					</div>
 					<div class="input-group">
 						<input type="text" id="identificacion" name="identificacion" onkeypress="return soloNumeros(event, this)" maxlength="9" >
-						<label class="label" for="identificacion">Identificación:</label>
+						<label class="label" id="LIdentificacion" for="identificacion">Identificación:</label>
 					</div>
 					
 					<div class="input-group">
@@ -72,6 +80,10 @@
 					<div class="input-group">
 						<input type="email" id="correo" name="correo">
 						<label class="label" for="correo">Correo:</label>
+					</div>
+                                                <div class="input-group">
+						<input type="email" id="web" name="correo" style="display: none">
+						<label class="label"id="lweb" for="correo" style="display: none">Pagina Web:</label>
 					</div>
 					<div class="input-group">
 						<input type="password" id="pass" name="pass">
@@ -94,7 +106,7 @@
 					<div>
 						
 
-					<div class="input-group radio">
+					<div class="input-group radio" id="diGenero">
 						<input type="radio" name="sexo" id="hombre" value="Hombre">
 						<label for="hombre">Masculino</label>
 						<input type="radio" name="sexo" id="mujer" value="Mujer">

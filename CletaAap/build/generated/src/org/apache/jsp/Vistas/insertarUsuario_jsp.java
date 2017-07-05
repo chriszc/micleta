@@ -60,7 +60,7 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t<script src=\"./js/menu.js\"></script>\n");
       out.write("\t<script scr=\"./js/footer.js\"></script>\n");
       out.write("\t<script src=\"./js/login.js\"></script>\n");
-      out.write("\t<script src=\"./js/cliente.js\"></script>\n");
+      out.write("\t<script src=\"../js/Usuarios.js\"></script>\n");
       out.write("\t<script src=\"../js/validaciones.js\"></script>\n");
       out.write("\t<script src=\"//code.jquery.com/jquery-1.9.1.js\"></script>\n");
       out.write("\t<script src=\"//code.jquery.com/ui/1.10.4/jquery-ui.js\"></script>\n");
@@ -82,6 +82,14 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t\t<label class=\"labelEncabezados\" ><span class=\"icon-man-woman\"></span></label>\n");
       out.write("\t\t\t\t\t\t<label class=\"labelEncabezados\" >Registro Usuario</label>\n");
       out.write("\t\t\t\t\t</div>\n");
+      out.write("                                    \n");
+      out.write("                                    <div class=\"input-group radio\">\n");
+      out.write("\t\t\t\t\t\t<input type=\"radio\" name=\"persona\" id=\"Cliente\"  value=\"1\" onClick=\"OpcionesCiclo(1)\">\n");
+      out.write("\t\t\t\t\t\t<label for=\"Cliente\" id=\"lClien\" >Cliente</label>\n");
+      out.write("\t\t\t\t\t\t<input type=\"radio\" name=\"persona\"  id=\"Ciclo\" value=\"2\" onClick=\"OpcionesCiclo(2)\">\n");
+      out.write("\t\t\t\t\t\t<label for=\"Ciclo\" id=\"LCiclo\" >Ciclo</label>\n");
+      out.write("\t\t\t\t\t\t\n");
+      out.write("\t\t\t\t\t</div>\t\n");
       out.write("\t\t\t\t\t\n");
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
       out.write("\t\t\t\t\t\t<input type=\"text\" id=\"nombre\" name=\"nombre\" onkeypress=\"return soloLetras(event, this)\">\n");
@@ -89,7 +97,7 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
       out.write("\t\t\t\t\t\t<input type=\"text\" id=\"apellidos\" name=\"apellidos\" onkeypress=\"return soloLetras(event, this)\">\n");
-      out.write("\t\t\t\t\t\t<label class=\"label\" for=\"correo\">Apellidos:</label>\n");
+      out.write("\t\t\t\t\t\t<label class=\"label\" id=\"LApellido\" for=\"correo\">Apellidos:</label>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t<div class=\"input-group\" >\n");
       out.write("\t\t\t\t\t\t<input type=\"datepicker\" id=\"date\" name=\"date\" required readonly />\n");
@@ -97,7 +105,7 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
       out.write("\t\t\t\t\t\t<input type=\"text\" id=\"identificacion\" name=\"identificacion\" onkeypress=\"return soloNumeros(event, this)\" maxlength=\"9\" >\n");
-      out.write("\t\t\t\t\t\t<label class=\"label\" for=\"identificacion\">Identificación:</label>\n");
+      out.write("\t\t\t\t\t\t<label class=\"label\" id=\"LIdentificacion\" for=\"identificacion\">Identificación:</label>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t\n");
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
@@ -111,6 +119,10 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
       out.write("\t\t\t\t\t\t<input type=\"email\" id=\"correo\" name=\"correo\">\n");
       out.write("\t\t\t\t\t\t<label class=\"label\" for=\"correo\">Correo:</label>\n");
+      out.write("\t\t\t\t\t</div>\n");
+      out.write("                                                <div class=\"input-group\">\n");
+      out.write("\t\t\t\t\t\t<input type=\"email\" id=\"web\" name=\"correo\" style=\"display: none\">\n");
+      out.write("\t\t\t\t\t\t<label class=\"label\"id=\"lweb\" for=\"correo\" style=\"display: none\">Pagina Web:</label>\n");
       out.write("\t\t\t\t\t</div>\n");
       out.write("\t\t\t\t\t<div class=\"input-group\">\n");
       out.write("\t\t\t\t\t\t<input type=\"password\" id=\"pass\" name=\"pass\">\n");
@@ -133,7 +145,7 @@ public final class insertarUsuario_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t\t\t\t<div>\n");
       out.write("\t\t\t\t\t\t\n");
       out.write("\n");
-      out.write("\t\t\t\t\t<div class=\"input-group radio\">\n");
+      out.write("\t\t\t\t\t<div class=\"input-group radio\" id=\"diGenero\">\n");
       out.write("\t\t\t\t\t\t<input type=\"radio\" name=\"sexo\" id=\"hombre\" value=\"Hombre\">\n");
       out.write("\t\t\t\t\t\t<label for=\"hombre\">Masculino</label>\n");
       out.write("\t\t\t\t\t\t<input type=\"radio\" name=\"sexo\" id=\"mujer\" value=\"Mujer\">\n");
