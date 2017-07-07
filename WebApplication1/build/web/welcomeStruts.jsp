@@ -32,9 +32,9 @@
         </header>
         
         <section>
-            <form action="/" method="post">
-                <input name="Id" type="text" placeholder="Id">
-                <button type="submit">Delete this motherfucker</button>
+            <form id="delete">
+                <input name="id" type="number" placeholder="Id">
+                <button type="button" onclick="deletePersona()">Delete this motherfucker</button>
             </form>
         </section>
         
@@ -50,8 +50,7 @@
             <tbody id="personas"></tbody>
         </table>
 
-        
+        <script src="./jquery.min.js"></script>
+        <script src="./persona.js"></script>
     </body>
-    <script src="jquery.min.js"/>
-    <script src="persona.js"/>
 </html:html>

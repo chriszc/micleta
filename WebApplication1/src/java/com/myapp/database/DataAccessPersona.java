@@ -63,19 +63,20 @@ public class DataAccessPersona{
         return null;
     }
 
-    public List<Persona> getAll() {
+    public static List<Persona> getAll() {
         Connection c = Database.getConnection();
-        LinkedList<Persona> l = null;
+        LinkedList<Persona> l = new LinkedList<>();
         try {
             PreparedStatement ps = (PreparedStatement) c.prepareStatement("select * from Persona");
             ResultSet rs = ps.executeQuery();
-            
-            l=new LinkedList<>();
+        
             while(rs.next()){
                 l.add(new Persona(rs.getInt("id"),rs.getString("nombre"),rs.getString("apellidos"),rs.getInt("edad")));
             }
         } 
-        catch (SQLException sqle) {}
+        catch (SQLException ex) {
+            Logger.getLogger(DataAccessPersona.class.getName()).log(Level.SEVERE, null, ex);
+        }   
         finally{Database.close();}
         
         return  l;

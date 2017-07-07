@@ -8,9 +8,10 @@ package actions;
 import com.myapp.database.DataAccessPersona;
 import com.myapp.model.Persona;
 import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import jdk.nashorn.internal.parser.JSONParser;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -22,10 +23,6 @@ import org.apache.struts.actions.DispatchAction;
  */
 public class PersonaAction extends DispatchAction{
 
-    /* forward name="success" path="" */
-    private static final String SUCCESS = "success";
-    
-    
     public void insert(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
         
         int edad=Integer.parseInt(request.getParameter("edad"));
@@ -38,20 +35,26 @@ public class PersonaAction extends DispatchAction{
         p.setNombre(nombre);
         
         DataAccessPersona.insert(p);
-        
-        PrintWriter pw = response.getWriter();
-        pw.write("ksajfñljdaslkjf");
     }
     
-    public ActionForward delete(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
-        
-        int id=Integer.parseInt(request.getParameter("id"));
-        
-        return DataAccessPersona.delete(id)? mapping.findForward("success") : mapping.findForward("failure");
+    public void delete(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
+        response.getWriter().write(DataAccessPersona.delete(Integer.parseInt(request.getParameter("id")))?"true":"false");
     }
     
-    public ActionForward getAll(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
-        
-        return null;
+    public void getAll(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
+        List<Persona> l = DataAccessPersona.getAll();
+        String s = "{[";
+        int count=0;
+        for(Persona p : l){
+            s+=count
+            +":{id:'"+p.getId()+"',"
+            +"nombre:'"+p.getNombre()+"',"
+            +"apellidos:'"+p.getApellidos()+"',"
+            +"edad:'"+p.getEdad()
+            +"'},";
+            count++;
+        }
+        s=s.substring(0,s.length()-1)+"]}";
+        response.getWriter().write(s);
     }
 }
