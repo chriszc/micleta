@@ -43,18 +43,16 @@ public class PersonaAction extends DispatchAction{
     
     public void getAll(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
         List<Persona> l = DataAccessPersona.getAll();
-        String s = "{[";
-        int count=0;
+        String s = "[";
         for(Persona p : l){
-            s+=count
-            +":{id:'"+p.getId()+"',"
-            +"nombre:'"+p.getNombre()+"',"
-            +"apellidos:'"+p.getApellidos()+"',"
-            +"edad:'"+p.getEdad()
-            +"'},";
-            count++;
+            s+=
+            "{\"id\":\""+p.getId()+"\","
+            +"\"nombre\":\""+p.getNombre()+"\","
+            +"\"apellidos\":\""+p.getApellidos()+"\","
+            +"\"edad\":"+p.getEdad()
+            +"},";
         }
-        s=s.substring(0,s.length()-1)+"]}";
+        s=s.substring(0,s.length()-1)+"]";
         response.getWriter().write(s);
     }
 }
