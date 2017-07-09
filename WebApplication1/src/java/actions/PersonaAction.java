@@ -25,14 +25,23 @@ public class PersonaAction extends DispatchAction{
 
     public void insert(ActionMapping mapping, ActionForm form,HttpServletRequest request, HttpServletResponse response)throws Exception {
         
-        int edad=Integer.parseInt(request.getParameter("edad"));
+        int cedula=Integer.parseInt(request.getParameter("cedula"));
         String nombre=request.getParameter("nombre");
         String apellidos=request.getParameter("apellidos");
+        String direccion=request.getParameter("direccion");
+        int telefono=Integer.parseInt(request.getParameter("telefono"));
+        String correo=request.getParameter("correo");
+        String contra=request.getParameter("contra");
         
         Persona p = new Persona();
         p.setApellidos(apellidos);
-        p.setEdad(edad);
+        p.setDireccion(direccion);
+        p.setId(cedula);
+        p.setTelefono(telefono);
         p.setNombre(nombre);
+        p.setCorreo(correo);
+        p.setContra(contra);
+        
         
         DataAccessPersona.insert(p);
     }
@@ -46,10 +55,13 @@ public class PersonaAction extends DispatchAction{
         String s = "[";
         for(Persona p : l){
             s+=
-            "{\"id\":\""+p.getId()+"\","
+            "{\"cedula\":\""+p.getId()+"\","
             +"\"nombre\":\""+p.getNombre()+"\","
             +"\"apellidos\":\""+p.getApellidos()+"\","
-            +"\"edad\":"+p.getEdad()
+            +"\"direccion\":"+p.getDireccion()+"\","
+            +"\"telefono\":\""+p.getTelefono()+"\","
+            +"\"correo\":\""+p.getCorreo()+"\","
+            +"\"contra\":\""+p.getContra()+"\","        
             +"},";
         }
         s=s.substring(0,s.length()-1)+"]";

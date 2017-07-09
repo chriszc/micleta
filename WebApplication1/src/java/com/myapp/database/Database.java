@@ -16,10 +16,10 @@ import java.sql.SQLException;
  */
 public abstract class Database {
 
-    public static final String USER="root";
-    public static final String PASS="root";
-    public static final String HOST="localhost";
-    public static final String DBNAME="test"; 
+    public static final String USER="ucrgrupo5";
+    public static final String PASS="Grup5#fNeo6";
+    public static final String HOST="72.167.233.101";
+    public static final String DBNAME="ucrgrupo5"; 
     public static final String PORT="3306";
     public static final String URL="jdbc:mysql://"+HOST+":"+PORT+"/"+DBNAME;
     

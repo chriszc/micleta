@@ -1,8 +1,5 @@
-<%-- 
-    Document   : insertarUsuario
-    Created on : 03-jul-2017, 15:24:58
-    Author     : chris
---%>
+<%
+    --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page contentType="text/html"%>

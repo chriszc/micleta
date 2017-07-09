@@ -5,27 +5,31 @@
  */
 package com.myapp.model;
 
-/**
- *
- * @author Álvaro González
- */
+
 public class Persona{
 
     private int id;
     private String nombre;
     private String apellidos;
-    private int edad;
+    private String direccion;
+    private int telefono;
+    private String correo;
+    private String contra;
 
     public Persona() {
-        id=edad=0;
-        nombre=apellidos="";
+        id=telefono=0;
+        nombre=apellidos=direccion=correo=contra="";
     }
     
-    public Persona(int id, String nombre, String apellidos, int edad) {
+    public Persona(int id, String nombre, String apellidos, String direccion, int telefono, String correo, String contra) {
         this.id = id;
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.edad = edad;
+        this.direccion= direccion;
+        this.telefono= telefono;
+        this.correo= correo;
+        this.contra= contra;
+        
     }
     
     public int getId() {
@@ -52,16 +56,42 @@ public class Persona{
         this.apellidos = apellidos;
     }
 
-    public int getEdad() {
-        return edad;
+  
+        public String getDireccion() {
+        return direccion;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getContra() {
+        return contra;
+    }
+
+    public void setContra(String contra) {
+        this.contra = contra;
     }
     
     @Override
     public String toString() {
-        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", edad=" + edad + '}';
+        return "Persona{" + "id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", direccion=" + direccion +
+                ", telefono="+telefono+", correo="+correo+", contra="+contra+ '}';
     }
 }
